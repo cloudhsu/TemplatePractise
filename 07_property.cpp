@@ -5,8 +5,8 @@ class property
 {
 public:
     property(
-            std::function<void(T)> setter,
-            std::function<T()> getter) :
+        std::function<void(T)> setter,
+        std::function<T()> getter) :
         setter_(setter), getter_(getter) { }
     operator T() const { return getter_(); }
     property<T> &operator= (const T &value) { setter_(value); return *this; }
@@ -32,5 +32,5 @@ int main(int argc, char *argv[])
     person p;
     p.age = 20;
     int a = p.age;
-    cout <<"age:"<<a<<endl
+    cout << "age:" << a << endl
 }
